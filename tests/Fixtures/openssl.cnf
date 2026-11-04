@@ -1,0 +1,16 @@
+# Minimal OpenSSL configuration used by the test suite to generate throw-away keys and certificates.
+HOME = .
+
+[ req ]
+distinguished_name = req_distinguished_name
+
+[ req_distinguished_name ]
+
+[ v3_ca ]
+basicConstraints = critical,CA:true
+keyUsage = critical,keyCertSign,cRLSign
+subjectKeyIdentifier = hash
+
+[ v3_leaf ]
+basicConstraints = CA:false
+keyUsage = critical,digitalSignature
